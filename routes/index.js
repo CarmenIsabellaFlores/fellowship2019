@@ -6,7 +6,24 @@ const models = require('../models');
 
 
 router.get('/', function(req, res, next) {
-  res.render('index');
+  console.log(req.query);
+  res.render('index', {
+    name: req.query.name,
+    lastname: req.query.lastname,
+
+  })
+});
+
+
+
+
+router.get('/DataSend', function(req, res, next) {
+  console.log(req.query);
+  res.render('DataSend', {
+    name: req.query.name,
+    lastname: req.query.lastname,
+
+  })
 });
 
 router.get('/logout', function(req,res,next){
