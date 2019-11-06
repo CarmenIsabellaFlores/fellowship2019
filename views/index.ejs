@@ -24,5 +24,19 @@
 
   </form>
 
+  <form method="post" action="/DataSend2">
+    <label for="name">Name (4 to 8 characters):</label>
+
+    <input type="text" id="name" name="name" required
+           minlength="4" maxlength="8" size="10">
+
+      <label for ="lastname">Last Name:</label>
+      <input type="text" id="lastname" name="lastname" required
+             minlength="4" maxlength="8" size="10">
+      <button type="sumbit"> Submit </button>
+
+
+    </form>
+
 
 <a href="/DataSend?name=Micheal&lastname=Estrada">Send Information</a>
