@@ -2,3 +2,51 @@
 <%- contentFor('body') %>
 
 <p> My name is <%= name %> <%= lastname %> . </p>
+
+
+<form>
+  First name:<br>
+  <input type="text" name="firstname">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname">
+</form>
+<button id="carmen" type="button">Click Me!</button>
+
+<script>
+
+
+function displayResult(value){
+  document.getElementById("Carmen").innerHTML = value;
+
+}
+
+$("#carmen").click(function(e){
+  e.preventDefault();
+  $.ajax({
+      type: "GET",
+      url: "https://sv443.net/jokeapi/category/programming",
+      data: {},
+      success: function(result) {
+          if (result.joke){
+            displayResult(result.joke)
+            alert("this worked!")
+
+
+          }
+
+
+      },
+        error: function(result){
+            alert("this did not work")
+
+        }
+
+  });
+
+});
+
+
+
+
+</script>

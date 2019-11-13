@@ -40,3 +40,33 @@
 
 
 <a href="/DataSend?name=Micheal&lastname=Estrada">Send Information</a>
+
+
+
+<button id="carmen" type="button">Click Me!</button>
+
+<script>
+
+  function displayResult(value){
+    document.getElementById("Carmen").innerHTML = value;
+
+  }
+
+$("#carmen").click(function(e) {
+  e.preventDefault();
+  $.ajax({
+    type: "GET",
+    url: "https://sv443.net/jokeapi/category/Any",
+    data: {},
+    success: function(result){
+      if (result.joke) {
+        alert(result.joke)
+      }
+    },
+    error: function(result){
+      alert("THIS IS TRASH")
+    }
+  })
+});
+
+</script>
