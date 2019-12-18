@@ -6,8 +6,18 @@
 <p> 2. I'm a student at ccsf </p>
 <p> 3.I like Chicken Katsu </p>
 
+
+<a href="/submitform"> Submit Form </a>
+
+<ul>
+<% for (let record of records) { %>
+  <li><a href="/posts?id=<%= record.id %>"><%= record.title %></a> </li>
+
+
+<%} %>
+</ul>
+
 <h1> This my name and age </h1>
-<p> My name is <%= name %> <%= lastname %> . </p>
 
 
 <form method="get" action="/DataSend">
