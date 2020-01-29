@@ -31,6 +31,26 @@ router.post('/', function(req, res, next) {
   });
 });
 
+router.get('/:id', function(req,res,next){
+    models.Todo.findByPk(req.params.id).then(function(record){
+      res.render('todo/edit',{
+        record:record
+
+      });
+  });
+});
+
+
+router.post('/:id', function(req, res, next) {
+    models.Todo.findByPk(req.params.id).then(function(record) {
+      record.update({
+        title: req.body.title,
+        body: req.body.body,
+      }).then(function(record) {
+        res.redirect(`/todo`)
+      });
+    });
+  });
 
 
 

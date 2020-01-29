@@ -6,7 +6,7 @@
 <p><a href="/todo/new">New TODO</a></p>
 <ul>
 <% for (let record of records) { %>
-  <li><a href="/posts?id=<%= record.id %>"><%= record.title %></a> </li>
+  <li><a href="/todo/<%= record.id %>"><%= record.title %></a> </li>
 
 
 <%} %>

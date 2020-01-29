@@ -1,0 +1,13 @@
+<%- contentFor('title') %>View post
+<%- contentFor('body') %>
+
+<form method="post" action="/todo/<%= record.id %>">
+    <label for="title">Name</label>
+    <input type="text" value="<%= record.title %> " id="title" name="title">
+    <br>
+    <label for="body">full_text</label>
+    <textarea name="body" id="body" value="<%= record.body %> " rows="10" cols="30"> <%= record.body %> </textarea>
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+  </form>
